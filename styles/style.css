@@ -189,17 +189,18 @@
 }
 
 .card__image-text {
+	display: flex;
 	position: absolute;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-size: 14px;
   font-weight: 400;
   top: 25px;
-  right: 25px;
+  right: clamp(25px, 0.5484rem + 1.1268vw, 13px);
   color: var(--accent-color);
   opacity: 0.5;
   mix-blend-mode: hard-light;
   -webkit-text-stroke: 1px var(--outline-color);
-  text-shadow: 0 var(--outline-color), 0 1px var(--outline-color),
+  text-shadow: -1px 0 var(--outline-color), 0 1px var(--outline-color),
   0 -1px var(--outline-color), 1px 0 var(--outline-color);
 	/* position: absolute;
 	display: flex;
@@ -214,7 +215,6 @@
 	opacity: 0.5;
 	text-shadow: -1px 0 var(--outline-color), 0 1px var(--outline-color),
 		1px 0 var(--outline-color), 0 -1px var(--outline-color); */
-	
 }
 
 @supports (
@@ -233,6 +233,9 @@
 }
 
 .card__content-text {
+	display: flex;
+  flex-direction: column;
+  gap: 27px; /* Задает отступы между параграфами */
 	margin-block-end: 25px;
 }
 
@@ -241,9 +244,9 @@
 	line-height: calc(21 / 18);
 }
 
-.card__paragraf {
+/* .card__paragraf {
 	margin-block-end: 27px;
-}
+} */
 
 .card__like {
 	display: flex;
